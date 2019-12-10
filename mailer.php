@@ -23,18 +23,21 @@ $mail->SMTPKeepAlive = true;
 
 $mail->Username = 'klevimerkuri123@gmail.com';
 
-$mail->Password = 'merkurinet';
+$mail->Password = 'xxxxxxxxx';
 
 $mail->setFrom('klevimerkuri123@gmail.com', 'Your Name');
 
 
 $mail->addAddress('klevi_merkuri@yahoo.com', 'Receiver Name');
 
-$mail->Subject = 'Testing PHPMailer';
+$mail->Subject = 'Contact me';
+$email=$_POST["email"];
+$message=$_POST["message"];
+$name=$_POST["name"];
 
 
 
-$mail->Body = 'Hello, this is my message.';
+$mail->Body = 'Client: '. $email . 'Name:' . $name . 'Message:' . $message;
 
 
 if (!$mail->send()) {
